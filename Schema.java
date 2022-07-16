@@ -11,8 +11,11 @@ public class Schema {
                 + "\n9) Heart\n10) Confused\n11) Upside-Down\n12) Serious\n13) Salir";
         while (band){
             try{
+
                 option = Integer.parseInt(JOptionPane.showInputDialog(null, messageMain, "Make Emoji"
                         , JOptionPane.INFORMATION_MESSAGE));
+
+
                 band = false;
             } catch (Exception e){
                 JOptionPane.showConfirmDialog(null, "Only accept numbers", "ERROR"
