@@ -89,10 +89,10 @@ public class makeEmoji extends JPanel{
 
     private void makeEmojiHeart (Graphics et){
         et.setColor(ColorUIResource.red);
-        et.drawArc(100,80,35,30,180,180);
-        et.drawArc(135,80,35,30,180,180);
-        et.drawLine(133,30,170,95);
-        et.drawLine(133,30,100,95);
+        et.drawArc(80,80,75,50,0,195);
+        et.drawArc(155,80,75,50,-10,195);
+        et.drawLine(81,113,155,210);
+        et.drawLine(231,108,155,210);
 
     }
 
