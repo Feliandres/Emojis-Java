@@ -1,7 +1,9 @@
 package Emojis;
 
 import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
 import java.awt.*;
+import java.lang.management.GarbageCollectorMXBean;
 
 public class makeEmoji extends JPanel{
     private int option = 0;
@@ -19,6 +21,90 @@ public class makeEmoji extends JPanel{
         super.paintComponent(f);
         f.setColor(Color.YELLOW);
         f.fillOval(50,50, 175, 175);
+    }
+
+    private void makeEmojiHappy (Graphics eh){
+        super.paintComponent(eh);
+        this.makeFace(eh);
+        eh.setColor(Color.black);
+        eh.fillOval(108, 80, 20, 35);
+        eh.fillOval(148, 80, 20, 35);
+        eh.drawArc(90, 100, 100,100, 180,180);
+
+    }
+    private void makeEmojiSad (Graphics es){
+        super.paintComponent(es);
+        this.makeFace(es);
+        es.setColor(Color.white);
+        es.fillOval(106, 80, 30, 35);
+        es.fillOval(146, 80, 30, 35);
+        es.setColor(Color.blue);
+        es.fillOval(112, 81, 22, 25);
+        es.fillOval(152, 81, 22, 25);
+        es.setColor(Color.white);
+        es.fillOval(116, 85, 14, 14);
+        es.fillOval(156, 85, 14, 14);
+        es.setColor(Color.black);
+        es.drawArc(90, 150, 100,80, 0,180);
+        es.drawArc(110, 55, 20,20, 212,130);
+        es.drawArc(155, 55, 20,20, 180,130);
+    }
+
+    private void makeEmojiScary (Graphics ec){
+        super.paintComponent(ec);
+        this.makeFace(ec);
+        ec.setColor(Color.white);
+        ec.fillOval(100, 80, 40, 55);
+        ec.fillOval(135, 80, 40, 55);
+        ec.setColor(Color.darkGray);
+        ec.fillArc(107,160,70,35,0,360);
+        ec.setColor(Color.blue);
+        ec.fillOval(108, 88, 29, 35);
+        ec.fillOval(142, 88, 29, 35);
+        ec.setColor(Color.white);
+        ec.fillOval(114, 98, 16, 18);
+        ec.fillOval(148, 98, 16, 18);
+        ec.setColor(Color.black);
+        ec.drawArc(100, 55, 23,23, 238,120);
+        ec.drawArc(155, 55, 23,23, 180,120);
+        ec.setColor(Color.cyan);
+        ec.fillOval(67, 80, 15, 50);
+    }
+
+    private void makeEmojiAngry (Graphics ea){
+        al(ea);
+        ea.setColor(Color.yellow);
+        ea.fillArc(100,80,40,30,-30,180);
+        ea.fillArc(135,80,40,30,30,180);
+        ea.setColor(Color.black);
+        ea.drawArc(100, 80, 40,30, -30,180);
+        ea.drawArc(135, 80, 40,30, 30,180);
+        ea.setColor(Color.red);
+        ea.fillArc(118,100,20,30,0,360);
+        ea.fillArc(153,100,20,30,0,360);
+        ea.setColor(Color.white);
+        ea.fillOval(115, 98, 10, 15);
+        ea.fillOval(150, 98, 10, 15);
+    }
+
+    private void makeEmojiHeart (Graphics et){
+        et.setColor(ColorUIResource.red);
+        et.drawArc(100,80,35,30,180,180);
+        et.drawArc(135,80,35,30,180,180);
+        et.drawLine(133,30,170,95);
+        et.drawLine(133,30,100,95);
+
+    }
+
+    private void makeEmojiConfused (Graphics ef){
+        super.paintComponent(ef);
+        this.makeFace(ef);
+        ef.setColor(Color.black);
+        ef.fillOval(108, 80, 20, 35);
+        ef.fillOval(148, 80, 20, 35);
+        ef.fillArc(135,80,40,15,0,180);
+        ef.fillArc(100,60,40,15,-10,200);
+        ef.fillArc(111,160,60,15,-10,200);
     }
     private void makeEmojiFlushed(Graphics ef){
         al(ef);
@@ -86,17 +172,17 @@ public class makeEmoji extends JPanel{
 
             // Amorlais: To do
             case 1:
-                System.out.println("Java");
+                this.makeEmojiHappy(g);
                 break;
 
             // Amorlais: To do
             case 2:
-                System.out.println("Java");
+                this.makeEmojiSad (g);
                 break;
 
             // Amorlais: To do
             case 3:
-                System.out.println("Java");
+                this.makeEmojiScary(g);
                 break;
 
             // I: Complete Surprised Emoji
@@ -106,7 +192,7 @@ public class makeEmoji extends JPanel{
 
             // Amorlais: To do
             case 5:
-                System.out.println("Java");
+                this.makeEmojiAngry(g);
                 break;
 
             // I: Complete Eyes Emoji
@@ -126,12 +212,12 @@ public class makeEmoji extends JPanel{
 
             // Amorlais: To do
             case 9:
-                System.out.println("Java");
+                this.makeEmojiHeart(g);
                 break;
 
             // Amorlais: To do
             case 10:
-                System.out.println("Java");
+                this.makeEmojiConfused(g);
                 break;
 
             // I: Complete Upside-Down Emoji
@@ -142,6 +228,10 @@ public class makeEmoji extends JPanel{
             // I: Complete Serious Emoji
             case 12:
                 this.makeEmojiSerious(g);
+                break;
+
+            case 13:
+                System.exit(0);
                 break;
 
             default:
